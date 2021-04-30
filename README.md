@@ -2,7 +2,7 @@
 - Blogr website - (https://gewoonsibrand.github.io/Blogr/public/index.html)
 
 # My other projects
-- Example Website - (https://gewoonsibrand.github.io/ExampleWebsite/)
+- Example Website - (https://https://github.com/GewoonSibrand/ExampleWebsite/)
 
 # Frontend Mentor - Blogr landing page solution
 
