@@ -1,0 +1,266 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogr Example Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-verydarkgrayishblue font-overpass"> 
+    <div class="hero text-white rounded-bl-big p-5 py-16 md:p-24" style="background-image: url('img/bg-pattern-intro.svg'),linear-gradient(to right, #ff525d, #ff3d54); background-position: 25% 50%; background-size: 200%;">
+        <div class="container mx-auto">
+            <div class="navbar relative flex mb-5">
+                <div class="w-1/4 md:w-1/6">
+                    <a href="/">
+                        <img src="img/logo.svg" alt="blogr logo">
+                    </a>
+                </div>
+                <div class="w-5/6 hidden md:block font-ubuntu" >
+                    <nav class="flex">
+                        <div class="w-full flex">
+                            <button onclick="showMenu(0)" class="text-lg flex items-center relative mr-7 text-gray-200 hover:text-white focus:outline-none">
+                                <span class="mr-2">Product</span>
+                                <img class="menu-arrow transform h-2" src="img/icon-arrow-light.svg" alt="arrow down">
+                                <div class="dropdown-menu hidden bg-white rounded shadow-xl top-10 w-24 absolute">
+                                    <div class="py-1">
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Info</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Buy</a>
+                                    </div>
+                                </div>
+                            </button>
+                            <button onclick="showMenu(1)" class="menu-btn text-lg flex items-center relative mr-7 text-gray-200 hover:text-white focus:outline-none">
+                                <span class="mr-2">Company</span>
+                                <img class="menu-arrow transform h-2" src="img/icon-arrow-light.svg" alt="arrow down">
+                                <div class="dropdown-menu hidden bg-white rounded shadow-xl top-10 w-24 absolute">
+                                    <div class="py-1">
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">About</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Vision</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Invest</a>
+                                    </div>
+                                </div>
+                            </button>
+                            <button onclick="showMenu(2)" class="menu-btn text-lg flex items-center relative text-gray-200 hover:text-white focus:outline-none">
+                                <span class="mr-2">Connect</span>
+                                <img class="menu-arrow transform h-2" src="img/icon-arrow-light.svg" alt="arrow down">
+                                <div class="dropdown-menu hidden bg-white rounded shadow-xl top-10 w-24 absolute">
+                                    <div class="py-1">
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Contact</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Newsletter</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">LinkedIn</a>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="flex w-full justify-end items-center">
+                            <div class="btn mr-4 cursor-pointer text-gray-200 hover:text-white">Login</div>
+                            <div class="btn px-6 py-2 rounded-full font-bold text-lightred bg-white hover:bg-verylightred hover:text-white cursor-pointer">Sign Up</div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="mobile-nav md:hidden flex justify-end items-center w-3/4">
+                    <img onclick="toggleMobileMenu(true)" class="hamburger-icon block" src="img/icon-hamburger.svg" alt="hamburger icon">
+                    <img onclick="toggleMobileMenu(false)" class="close-icon hidden" src="img/icon-close.svg" alt="close icon">
+                </div>
+                <div class="mobile-menu hidden flex-col items-center w-full absolute rounded bg-white shadow-xl text-verydarkblackblue font-bold left-0 top-16 p-5 z-50">
+                    <div class="mobile-links w-full flex flex-col ">
+                        <button onclick="showMobileMenu(0)" class="text-lg flex items-center focus:outline-none mb-2">
+                            <span class="w-full text-verydarkblackblue font-bold mr-2">Product</span>
+                            <img class="mobile-menu-arrow transform h-2" src="img/icon-arrow-dark.svg" alt="arrow down">                                  
+                        </button>
+                        <div class="mobile-dropdown-menu hidden items-center flex-col rounded bg-gray-200 py-4 mb-5">
+                            <a href="#" class="block px-4 py-2  text-verydarkblue">Info</a>
+                            <a href="#" class="block px-4 py-2  text-verydarkblue">Buy</a>
+                        </div> 
+                        <button onclick="showMobileMenu(1)" class="text-lg flex items-center focus:outline-none mb-2">
+                            <span class="w-full text-verydarkblackblue font-bold mr-2">Company</span>
+                            <img class="mobile-menu-arrow transform h-2" src="img/icon-arrow-dark.svg" alt="arrow down">
+                        </button>
+                        <div class="mobile-dropdown-menu hidden items-center flex-col rounded bg-gray-200 py-4 mb-5">
+                            <a href="#" class="block px-4 py-2  text-verydarkblue">About</a>
+                            <a href="#" class="block px-4 py-2  text-verydarkblue">Vision</a>
+                            <a href="#" class="block px-4 py-2  text-verydarkblue">Invest</a>
+                        </div>
+                        <button onclick="showMobileMenu(2)" class="text-lg flex items-center focus:outline-none mb-2">
+                            <span class="w-full text-verydarkblackblue font-bold mr-2">Connect</span>
+                            <img class="mobile-menu-arrow transform h-2" src="img/icon-arrow-dark.svg" alt="arrow down">
+                        </button>
+                        <div class="mobile-dropdown-menu hidden items-center flex-col rounded bg-gray-200 py-4 mb-5">
+                            <a href="#" class="block px-4 py-2  text-verydarkblue">Contact</a>
+                            <a href="#" class="block px-4 py-2  text-verydarkblue">Newsletter</a>
+                            <a href="#" class="block px-4 py-2  text-verydarkblue">LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="h-px w-full bg-gray-200 mb-2"></div>
+                    <div class="btn cursor-pointer text-verydarkblackblue font-bold mb-2">Login</div>
+                    <div class="btn px-6 py-2 rounded-full font-bold bg-verylightred text-white cursor-pointer">Sign Up</div>
+                </div>
+            </div>
+            <div class="hero-content text-center flex flex-col justify-center items-center h-1/2">
+                <h1 class="font-bold text-4xl md:text-6xl mb-4 p-2 md:p-0">A modern publishing platform</h1>
+                <h5 class="text-2xl md:text-xl mb-7 text-gray-200">Grow your adience and build your online brand</h5>
+                <div class="buttons font-ubuntu flex justify-center items-center">
+                    <div class="btn px-4 py-2 rounded-full font-bold border-2 border-white text-lightred bg-white hover:bg-verylightred hover:text-white hover:border-transparent mr-3 cursor-pointer">Start for Free</div>
+                    <div class="btn px-4 py-2 rounded-full font-bold border-2 border-white hover:text-lightred hover:bg-white cursor-pointer">Learn more</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section-1 relative overflow-hidden px-5 pt-24 pb-48 md:pb-48 md:p-24">
+        <div class="container mx-auto">
+            <div class="flex justify-center w-full mb-14">
+                <h2 class="text-verydarkblue text-3xl font-bold">Designed for the future</h2>
+            </div>
+            <div class="flex flex-col md:flex-row">
+                <div class="w-full order-last text-center md:order-first md:text-left md:w-1/2">
+                    <h3 class="text-verydarkblue text-2xl font-bold mb-5">Introducing an extensible editor</h3>
+                    <p class="mb-14">
+                        Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
+                        The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos, and Markdown.
+                        Extensibility with plugins and themes provide easy ways to add functionality or change the looks of a blog.
+                    </p>
+                    <h3 class="text-verydarkblue text-2xl font-bold mb-5">Robust content management</h3>
+                    <p>
+                        Flexible content management enables users to easily move through posts.
+                        Increase the usability of your blog by adding customized categories, sections, format, or flow.
+                        With this functionality, you’re in full control.
+                    </p>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <img class="mx-auto md:absolute md:h-2/5 md:top-64 md:-right-16 lg:h-3/5 lg:top-44 xl:top-24 xl:-right-20 xl:h-5/6" src="img/illustration-editor-mobile.svg" alt="editor mobile">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-2 rounded-bl-big rounded-tr-big relative p-5 pb-24 md:px-24 md:py-36" style="background-image: url('img/bg-pattern-circles.svg'), linear-gradient(to right, #3f4164, #2c2d3f); background-repeat: no-repeat; background-position: 50% 119%, 0 0;">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row">
+                <div class="w-full -mt-32 md:mt-0 md:w-1/2">
+                    <img class="mx-auto lg:absolute md:top-0 md:-mt-16" src="img/illustration-phones.svg" alt="phones">
+                </div>
+                <div class="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center">
+                    <h2 class="text-white font-bold text-4xl mb-5">State of the Art Infrastructure</h2>
+                    <p class="text-white">
+                        With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-3 relative overflow-hidden p-5 py-24 md:p-24 md:py-48">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row">
+                <div class="w-full mb-5 md:w-1/2">
+                    <img class="md:absolute md:h-2/5 md:top-64 md:-left-16 lg:h-3/5 lg:top-44 xl:top-24 xl:-left-20 xl:h-5/6" src="img/illustration-laptop-desktop.svg" alt="laptop desktop">
+                </div>
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h3 class="text-verydarkblue text-2xl font-bold mb-5">Free, open, simple</h3>
+                    <p class="mb-14">
+                        Blogr is a free and open source application backed by a large community of helpful developers.
+                        It supports features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, and works seamlessly with Google Analytics.
+                        The architecture is clean and is relatively easy to learn.
+                    </p>
+                    <h3 class="text-verydarkblue text-2xl font-bold mb-5">Powerful tooling</h3>
+                    <p>
+                        Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but capable of producing even the most complicated sites.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-verydarkblackblue rounded-tr-big text-white text-center p-5 py-24 md:p-24">
+        <div class="container mx-auto flex flex-col md:flex-row">
+            <div class="w-full md:w-1/4 pb-16">
+                <img class="mx-auto" src="img/logo.svg" alt="blogr logo">
+            </div>
+            <div class="w-full md:w-1/4 pb-16">
+                <b>Product</b>
+                <div class="list flex flex-col text-gray-200 mt-5">
+                    <a class="mb-2 hover:underline hover:text-white" href="/#">Overview</a>
+                    <a class="mb-2 hover:underline hover:text-white" href="/#">Pricing</a>
+                    <a class="mb-2 hover:underline hover:text-white" href="/#">Marketplace</a>
+                    <a class="mb-2 hover:underline hover:text-white" href="/#">Features</a>
+                    <a href="/#">Integrations</a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/4 pb-16">
+                <b>Company</b>
+                <div class="flex flex-col list mt-5">
+                    <a class="mb-2 hover:underline hover:text-white" href="/#">About</a>
+                    <a class="mb-2 hover:underline hover:text-white" href="/#">Team</a>
+                    <a class="mb-2 hover:underline hover:text-white" href="/#">Blog</a>
+                    <a class="hover:underline hover:text-white" href="/">Careers</a>
+                </div></div>
+            <div class="w-full md:w-1/4 pb-16">
+                <b>Connect</b>
+                <div class="flex flex-col list mt-5">
+                    <a class="mb-2 hover:underline hover:text-white" href="/#">Contact</a>
+                    <a class="mb-2 hover:underline hover:text-white" href="/#">Newsletter</a>
+                    <a class="hover:underline hover:text-white" href="/#">Linkedin</a>
+                </div></div>
+        </div>
+    </footer>
+
+    <script>
+        function showMenu($menuId)
+        {
+            const dropdowns = document.querySelectorAll('.dropdown-menu');
+            const dropdownArrows = document.querySelectorAll('.menu-arrow');
+
+            if(!dropdowns[$menuId].classList.contains('hidden'))
+            {
+                dropdowns[$menuId].classList.remove('block');
+                dropdowns[$menuId].classList.add('hidden');
+                dropdownArrows[$menuId].classList.remove('rotate-180');
+                return;
+            }
+
+            dropdowns[$menuId].classList.remove('hidden');
+            dropdowns[$menuId].classList.add('block');
+            dropdownArrows[$menuId].classList.add('rotate-180');
+        }
+
+        function showMobileMenu($menuId)
+        {
+            const mobileDropdowns = document.querySelectorAll('.mobile-dropdown-menu');
+            const mobileDropdownArrows = document.querySelectorAll('.mobile-menu-arrow');
+
+            if(!mobileDropdowns[$menuId].classList.contains('hidden'))
+            {
+                mobileDropdowns[$menuId].classList.remove('flex');
+                mobileDropdowns[$menuId].classList.add('hidden');
+                mobileDropdownArrows[$menuId].classList.remove('rotate-180');
+                return;
+            }
+
+            mobileDropdowns[$menuId].classList.remove('hidden');
+            mobileDropdowns[$menuId].classList.add('flex');
+            mobileDropdownArrows[$menuId].classList.add('rotate-180');
+        }
+
+        function toggleMobileMenu(bool)
+        {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const closeIcon = document.querySelector('.close-icon');
+            const hamburgerIcon = document.querySelector('.hamburger-icon');
+
+            if(!bool)
+            {
+                mobileMenu.classList.remove('flex');
+                mobileMenu.classList.add('hidden');
+                closeIcon.classList.remove('block');
+                closeIcon.classList.add('hidden');
+                hamburgerIcon.classList.remove('hidden');
+                hamburgerIcon.classList.add('block');
+                return;
+            }
+
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            closeIcon.classList.remove('hidden');
+            closeIcon.classList.add('block');
+            hamburgerIcon.classList.remove('block');
+            hamburgerIcon.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
